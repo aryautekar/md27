@@ -8,10 +8,10 @@ x=ceil(X/2);
 y=ceil(Y/2);
 rad=26;
 for i=1:X
-for j=1:Y
-d(i,j)=sqrt((i-x).^2+(j-y).^2);
-h(i,j)=1/(1+((d(i,j))/rad).^(2*N));
-end
+  for j=1:Y
+    d(i,j)=sqrt((i-x).^2+(j-y).^2);
+    h(i,j)=1/(1+((d(i,j))/rad).^(2*N));
+  end
 end
 fft1=fftshift(fft2(img));
 fil=h.*fft1;
@@ -40,10 +40,10 @@ x=ceil(X/2);
 y=ceil(Y/2);
 rad=26;
 for i=1:X
-for j=1:Y
-d(i,j)=sqrt((i-x).^2+(j-y).^2);
-h(i,j)=1/(1+(rad/d(i,j)).^(2*N));
-end
+  for j=1:Y
+    d(i,j)=sqrt((i-x).^2+(j-y).^2);
+    h(i,j)=1/(1+(rad/d(i,j)).^(2*N));
+  end
 end
 fft1=fftshift(fft2(img));
 fil=h.*fft1;
@@ -72,10 +72,10 @@ x=ceil(X/2);
 y=ceil(Y/2);
 rad=26;
 for i=1:X
-for j=1:Y
-d(i,j)=sqrt((i-x).^2+(j-y).^2);
-h(i,j)=exp(-(d(i,j).^2)/(2*((rad).^2)));
-end
+   for j=1:Y
+    d(i,j)=sqrt((i-x).^2+(j-y).^2);
+    h(i,j)=exp(-(d(i,j).^2)/(2*((rad).^2)));
+  end
 end
 fft1=fftshift(fft2(img));
 fil=h.*fft1;
@@ -104,10 +104,10 @@ x=ceil(X/2);
 y=ceil(Y/2);
 rad=26;
 for i=1:X
-for j=1:Y
-d(i,j)=sqrt((i-x).^2+(j-y).^2);
-h(i,j)=1-exp(-(d(i,j).^2)/(2*((rad).^2)));
-end
+   for j=1:Y
+    d(i,j)=sqrt((i-x).^2+(j-y).^2);
+    h(i,j)=1-exp(-(d(i,j).^2)/(2*((rad).^2)));
+  end
 end
 fft1=fftshift(fft2(img));
 fil=h.*fft1;
@@ -135,10 +135,10 @@ x=ceil(X/2);
 y=ceil(Y/2);
 rad=26;
 for i=1:X
-for j=1:Y
-d(i,j)=sqrt((i-x).^2+(j-y).^2);
-h(i,j)=double(d(i,j)<=rad);
-end
+  for j=1:Y
+    d(i,j)=sqrt((i-x).^2+(j-y).^2);
+    h(i,j)=double(d(i,j)<=rad);
+  end
 end
 fft1=fftshift(fft2(img));
 fil=h.*fft1;
@@ -167,10 +167,10 @@ x=ceil(X/2);
 y=ceil(Y/2);
 rad=26;
 for i=1:X
-for j=1:Y
-d(i,j)=sqrt((i-x).^2+(j-y).^2);
-h(i,j)=double(d(i,j)>rad);
-end
+  for j=1:Y
+    d(i,j)=sqrt((i-x).^2+(j-y).^2);
+    h(i,j)=double(d(i,j)>rad);
+  end
 end
 fft1=fftshift(fft2(img));
 fil=h.*fft1;
